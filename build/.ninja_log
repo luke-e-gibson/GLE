@@ -1,9 +1,0 @@
-# ninja log v5
-8402	8776	1701429818440312603	gle	fb7a74901f0914e1
-3	8402	1701429818060312616	CMakeFiles/gle.dir/src/main.cpp.o	d2bcdff601158c91
-86	11207	1701429339733661566	CMakeFiles/gle.dir/src/graphics/graphics.cpp.o	8e30ff052b5ca6a2
-3	1293	1701425676433781321	CMakeFiles/gle.dir/src/glad.c.o	474fa6aedf91b326
-2	430	1701427435733723773	CMakeFiles/gle.dir/src/glad/glad.c.o	4357a314aeee06b9
-2	9497	1701430139796968782	CMakeFiles/gle.dir/src/main.cpp.o	d2bcdff601158c91
-3	9497	1701430139796968782	CMakeFiles/gle.dir/src/window/window.cpp.o	e0423d1d8ca9e37c
-9497	12379	1701430142686968687	gle	3c8b8ed5ad8519fb
