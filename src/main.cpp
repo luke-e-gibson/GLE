@@ -10,11 +10,14 @@ void update(GLFWwindow *window)
     int state = glfwGetKey(window, GLFW_KEY_A);
     if (state == GLFW_PRESS && !pressed)
     {
-        spdlog::info("Key A pressed");
+        spdlog::info("Key A PRESS");
+        glClearColor(0.0f, 1.0f, 0.0f, 1.0f);
         pressed = true;
     }
-    else
+    if (state == GLFW_RELEASE && pressed)
     {
+        spdlog::info("Key A RELEASE");
+        glClearColor(1.0f, 0.5f, 0.5f, 1.0f);
         pressed = false;
     }
 }
