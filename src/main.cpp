@@ -18,13 +18,17 @@ void update(GLFWwindow *window)
         pressed = false;
     }
 }
+void error_callback(int error, const char *description)
+{
+    spdlog::error("Error: {}", description);
+}
 
 int main()
 {
     Window window;
 
-    // Initialize the window
     window.WindowInit();
+    glfwSetErrorCallback(error_callback);
     window.Start(update);
 
     return 0;

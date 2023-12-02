@@ -1,13 +1,9 @@
 #include "window.hpp"
 #include "spdlog/spdlog.h"
 
-void Window::glfwErrorCallback(int error, const char *description)
-{
-    spdlog::error("ERROR CODE: {}; {}", error, description);
-}
-
 void Window::WindowInit()
 {
+    spdlog::info("Window Opening");
     if (!glfwInit())
     {
         spdlog::error("GLFW could not init");
@@ -21,6 +17,7 @@ void Window::WindowInit()
     }
 
     glfwMakeContextCurrent(window);
+    gladLoadGL();
     if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
     {
         spdlog::error("Failed to initialize GLAD");
@@ -28,12 +25,33 @@ void Window::WindowInit()
 }
 void Window::Start(std::function<void(GLFWwindow *ptr)> update)
 {
+    spdlog::info("Starting Application");
+    glClearColor(1.0f, 0.5f, 0.5f, 1.0f);
+
     _Update(update);
+}
+void Window::_FpsCounter(double fps)
+{
+    spdlog::info("FPS: {}", fps);
 }
 void Window::_Update(std::function<void(GLFWwindow *ptr)> update)
 {
+    spdlog::info("Enterd Mainloop");
+    double previousTime = glfwGetTime();
+    int frameCount = 0;
     while (!glfwWindowShouldClose(window))
     {
+        double currentTime = glfwGetTime();
+        frameCount++;
+        // If a second has passed.
+        if (currentTime - previousTime >= 1.0)
+        {
+            // Display the frame count here any way you want.
+            _FpsCounter(frameCount);
+
+            frameCount = 0;
+            previousTime = currentTime;
+        }
         // Render here
         glClear(GL_COLOR_BUFFER_BIT);
         // Swap front and back buffers
@@ -44,5 +62,6 @@ void Window::_Update(std::function<void(GLFWwindow *ptr)> update)
         update(window);
     }
 
+    spdlog::info("Closing GLFW");
     glfwTerminate();
 }

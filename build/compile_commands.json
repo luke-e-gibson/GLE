@@ -1,0 +1,20 @@
+[
+{
+  "directory": "/home/lukeg/GLE/build",
+  "command": "/usr/bin/gcc -g -o CMakeFiles/gle.dir/src/glad/glad.c.o -c /home/lukeg/GLE/src/glad/glad.c",
+  "file": "/home/lukeg/GLE/src/glad/glad.c",
+  "output": "CMakeFiles/gle.dir/src/glad/glad.c.o"
+},
+{
+  "directory": "/home/lukeg/GLE/build",
+  "command": "/usr/bin/g++ -g -o CMakeFiles/gle.dir/src/main.cpp.o -c /home/lukeg/GLE/src/main.cpp",
+  "file": "/home/lukeg/GLE/src/main.cpp",
+  "output": "CMakeFiles/gle.dir/src/main.cpp.o"
+},
+{
+  "directory": "/home/lukeg/GLE/build",
+  "command": "/usr/bin/g++ -g -o CMakeFiles/gle.dir/src/window/window.cpp.o -c /home/lukeg/GLE/src/window/window.cpp",
+  "file": "/home/lukeg/GLE/src/window/window.cpp",
+  "output": "CMakeFiles/gle.dir/src/window/window.cpp.o"
+}
+]
