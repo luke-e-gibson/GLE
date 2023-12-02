@@ -1,9 +1,9 @@
 #include "window.hpp"
-#include "spdlog/spdlog.h"
 
 void Window::WindowInit()
 {
     spdlog::info("Window Opening");
+    glfwSetErrorCallback(Window::GlfwErrorCallback);
     if (!glfwInit())
     {
         spdlog::error("GLFW could not init");
@@ -23,11 +23,11 @@ void Window::WindowInit()
         spdlog::error("Failed to initialize GLAD");
     }
 }
-void Window::Start(std::function<void(GLFWwindow *ptr)> update)
+void Window::Start(std::function<void(GLFWwindow *ptr)> start, std::function<void(GLFWwindow *ptr)> update)
 {
     spdlog::info("Starting Application");
     glClearColor(1.0f, 0.5f, 0.5f, 1.0f);
-
+    start(window);
     _Update(update);
 }
 void Window::_FpsCounter(double fps)
