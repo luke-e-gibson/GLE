@@ -6,7 +6,7 @@ A basic GLFW framework for graphics
 - [x] Opening A Window
 - [x] Passing Update Function
 - [ ] Passing Start Function
-- [ ] Hidding more function behined engine unless wanted by user like error handeling
+- [x] Hidding more function behined engine unless wanted by user like error handeling (Dev branch Wip)
 - [ ] Loggin For Client And Engine (Hanndel by engine)
 - [ ] keyboard and mouse Systeam
 - [ ] drawing to screen
