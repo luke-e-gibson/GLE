@@ -9,7 +9,11 @@ This project is being developed on an old linix machine witch is not that fast t
 
 This project uses cmake in vscode with cmake tools and builtin c/cpp formating styles. Thos framework has no direction where this is heading. 
 
-### Todo
+### Todo - This branch
+- [ ] Swicth From CMake to premake to gen project files
+- [ ] Switch from linking GLE in to program make it a shared lib / dll
+
+### Todo - Genral
 - [x] Opening A Window
 - [x] Passing Update Function
 - [x] Passing Start Function
