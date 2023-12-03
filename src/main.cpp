@@ -1,6 +1,4 @@
-#include "window/window.hpp"
-#include "GLFW/glfw3.h"
-#include "spdlog/spdlog.h"
+#include "gle/GLE.hpp"
 
 bool pressed = false;
 
@@ -25,17 +23,15 @@ void start(GLFWwindow *window)
 {
     spdlog::info("Start Application");
 }
-void error_callback(int error, const char *description)
-{
-    spdlog::error("Error: {}", description);
-}
 
 int main()
 {
     Window window;
+    Graphics graphics;
 
     window.WindowInit();
-    window.Start(start, update);
+    window.Start(start, update, graphics);
+    window.Cleanup();
 
     return 0;
 }

@@ -1,4 +1,5 @@
 #include "../glad/glad.h"
+#include "../graphics/graphics.hpp"
 #include "spdlog/spdlog.h"
 #include "GLFW/glfw3.h"
 #include "functional"
@@ -13,10 +14,10 @@ public:
     {
         spdlog::error("ERROR CODE: {}, ERROR MESSAGE: {}", errorCode, message);
     }
-
-    void Start(std::function<void(GLFWwindow *ptr)> start, std::function<void(GLFWwindow *ptr)> update);
+    void Start(std::function<void(GLFWwindow *ptr)> start, std::function<void(GLFWwindow *ptr)> update, Graphics grahicsPipeLine);
+    void Cleanup();
 
 private:
-    void _Update(std::function<void(GLFWwindow *ptr)> update);
-    void _FpsCounter(double fps);
+    void _Update(std::function<void(GLFWwindow *ptr)> update, Graphics grahicsPipeLine);
+    void _FpsCounterLog(double fps);
 };

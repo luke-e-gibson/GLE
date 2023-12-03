@@ -13,3 +13,5 @@ A basic GLFW framework for graphics
 - [ ] drawing to screen
 - [ ] 2d sprits
 - [ ] 3d objects
+- [ ] 3d shadow Mapping
+
